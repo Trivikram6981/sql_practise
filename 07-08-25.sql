@@ -51,3 +51,5 @@ Values('France',2,'2email',16,2222);
 INSERT INTO Demo_db.constraints_tb(country,id,mail_id,age,Contact) 
 Values('germany',3,'2email',19,2222);
 SELECT * FROM Demo_db.constraints_tb;
+INSERT INTO Demo_db.constraints_tb(id,mail_id,age,Contact)
+Values(1,'1email',19,11111);
