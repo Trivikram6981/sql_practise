@@ -1,0 +1,29 @@
+CREATE PROCEDURE search_film (IN id INT)
+BEGIN 
+SET @_query=CONCAT('SELECT * FROM sakila.film WHERE film_id=',id);
+PREPARE STMT FROM @_QUERY;
+EXECUTE STMT;
+DEALLOCATE PREPARE STMT;
+END //
+DELIMITER ;
+
+CALL search_film(5);
+
+
+
+
+
+SET @_query=CONCAT('SELECT * FROM sakila.film WHERE film_id=',id);
+PREPARE STMT FROM @_QUERY;
+EXECUTE STMT;
+DEALLOCATE PREPARE STMT;
+
+
+
+
+
+
+
+
+
+

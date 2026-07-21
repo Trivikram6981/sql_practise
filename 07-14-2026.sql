@@ -42,17 +42,18 @@ SELECT * FROM customer_contact;
 
 #PROCEDURE
 DELIMITER //
-CREATE PROCEDURE genre(IN genre CHAR(30))
+CREATE PROCEDURE genre(IN g CHAR(30))
 BEGIN
 SELECT f.film_id,f.title,c.name AS category FROM sakila.film f
 LEFT JOIN sakila.film_category fc
 ON f.film_id=fc.film_id
 JOIN sakila.category c
 ON fc.category_id=c.category_id
-WHERE c.name=genre;
+WHERE c.name=g;
 END //
 DELIMITER ;
 
+DROP PROCEDURE genre;
 CALL genre('DOCUMENTARY');
 
 DELIMITER //
